@@ -1,6 +1,6 @@
 import connectDB from "@/app/config/db";
 import Chat from "@/app/models/chat.model";
-import { getAuth } from "@clerk/nextjs/dist/types/server";
+import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -22,6 +22,7 @@ export async function POST(req) {
 
     //Connecting to the database and creating new chat
     await connectDB();
+
     await Chat.create(chatData);
     return NextResponse.json({ success: true, message: "Chat Created" });
   } catch (error) {

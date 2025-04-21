@@ -7,9 +7,9 @@ import ChatLabel from "./ChatLabel";
 
 const Sidebar = ({ expand, setExpand }) => {
   const { openSignIn } = useClerk();
-  const { user } = useAppContext();
+  const { user, chats, createNewChat } = useAppContext();
 
-  const [openMenu , setOpenMenu] = useState({id:0 , open:false})
+  const [openMenu, setOpenMenu] = useState({ id: 0, open: false });
   return (
     <div
       className={`flex flex-col justify-between bg-[#212327] pt-7 transition-all z-50 max-md:absolute max-md:h-screen ${
@@ -56,6 +56,7 @@ const Sidebar = ({ expand, setExpand }) => {
         </div>
 
         <button
+          onClick={createNewChat}
           className={`mt-8 flex items-center justify-center cursor-pointer ${
             expand
               ? "bg-primary hover:opacity-90 rounded-2xl gap-2 p-2.5 w-max"
@@ -79,7 +80,15 @@ const Sidebar = ({ expand, setExpand }) => {
           }`}
         >
           <p className="my-1">Recent Chats</p>
-          <ChatLabel openMenu={openMenu} setOpenMenu={setOpenMenu}/>
+          {chats.map((chat) => (
+            <ChatLabel
+              key={chat._id}
+              name={chat.name}
+              id={chat._id}
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+            />
+          ))}
         </div>
       </div>
 
