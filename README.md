@@ -2,7 +2,7 @@
 
 DeepSeek AI Clone is a modern, full-stack AI-powered chat application inspired by the design and experience of platforms like ChatGPT and DeepSeek. This project demonstrates how to seamlessly integrate advanced language models (via Google’s Gemini API) with robust user authentication (via Clerk) and persistent chat history using MongoDB. The app is built with a modular architecture using Next.js 13 App Router, enabling scalable and efficient rendering on both the client and server.
 
-🔐 Authentication with Clerk
+ Authentication with Clerk
 To manage user identity and secure access to chats, the project uses Clerk, a developer-friendly authentication platform. Clerk offers prebuilt components, secure session handling, and deep integration with modern frameworks like Next.js. Users can sign up, log in, and their sessions are managed server-side through Clerk’s SDKs. The authentication state is used to uniquely associate chat sessions and store chat history per user in the database.
 
 Key Clerk Benefits:
