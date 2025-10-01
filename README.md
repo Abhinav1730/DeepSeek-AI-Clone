@@ -13,7 +13,7 @@ Session management, social logins, and OTP out-of-the-box
 
 Seamless integration with server-side APIs via getAuth() in route handlers
 
-🤖 Generative AI with Gemini API
+-> Generative AI with Gemini API
 The core functionality of this app is powered by Google’s Gemini API (via the @google/genai SDK). Gemini is Google’s large language model platform (similar to OpenAI's GPT), capable of understanding and generating human-like text based on input prompts.
 
 In the backend (/api/chat/ai route), user prompts are sent to the Gemini API using generateContent(). The model returns intelligent responses that are then streamed or displayed word-by-word on the frontend for a more realistic and dynamic chat experience. The app uses the "gemini-pro" model by default, but this can be upgraded or changed based on your needs.
